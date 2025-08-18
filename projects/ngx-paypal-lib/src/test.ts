@@ -8,14 +8,16 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 
-declare const require: any;
-
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting()
 );
-// Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
+
+// Then we find all the tests using Webpack 5's import.meta API.
+const context = (import.meta as any).webpackContext('./', {
+  recursive: true,
+  regExp: /\.spec\.ts$/
+});
 // And load the modules.
-context.keys().map(context);
+context.keys().forEach(context);
