@@ -9,8 +9,8 @@
         "*.ts"
       ],
       "extends": [
-        "@angular-eslint/recommended",
-        "@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
@@ -36,8 +36,8 @@
         "*.html"
       ],
       "extends": [
-        "@angular-eslint/template/recommended",
-        "@angular-eslint/template/accessibility"
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:@angular-eslint/template/accessibility"
       ],
       "rules": {}
     }
